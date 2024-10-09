@@ -1,0 +1,77 @@
+import br.com.gestao_residuos_automacao.controller.AgendamentoColetaController;
+import br.com.gestao_residuos_automacao.service.AgendamentoColetaService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.mockito.Mockito.mock;
+
+
+@WebMvcTest(AgendamentoColetaController.class)
+@AutoConfigureMockMvc
+@ContextConfiguration(classes = {GestaoResiduosAutomacaoApplicationTests.TestConfig.class})
+public class GestaoResiduosAutomacaoApplicationTests {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+	@MockBean
+    private AgendamentoColetaService agendamentoColetaService;
+
+    @Configuration
+    static class TestConfig {
+        @Bean
+        public AgendamentoColetaService agendamentoColetaService() {
+            return Mockito.mock(AgendamentoColetaService.class);
+        }
+    }
+
+    @Test
+    public void testGetAgendamentoDeColeta() throws Exception {
+        mockMvc.perform(get("/agendamento-de-coleta/1")
+                .with(httpBasic("username", "password")))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.agendamentoId").exists())
+                .andExpect(jsonPath("$.dataAgendada").exists())
+                .andExpect(jsonPath("$.status").exists());
+    }
+
+    @Test
+    public void testPostAgendamentoDeColeta() throws Exception {
+        String requestBody = "{ \"agendamentoId\": 100, \"rota\": { \"rotaId\": 1, \"descricao\": \"Rota 77\", \"caminhaoId\": 1, \"data\": 1713668400000, \"latitude\": 40.7128, \"longitude\": -74.006, \"capacidadeAtual\": 8.0 }, \"dataAgendada\": 1714359600000, \"status\": \"Pendente\"}";
+        mockMvc.perform(post("/agendamento-de-coleta/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(requestBody)
+                .with(httpBasic("username", "password")))
+                .andExpect(status().isCreated());
+    }
+
+    @Test
+    public void testPutAgendamentoDeColeta() throws Exception {
+        String requestBody = "{ \"agendamentoId\": 100, \"rota\": { \"rotaId\": 1, \"descricao\": \"Rota 77\", \"caminhaoId\": 1, \"data\": 1713668400000, \"latitude\": 40.7128, \"longitude\": -74.006, \"capacidadeAtual\": 8.0 }, \"dataAgendada\": 1714359600000, \"status\": \"Cocnluida\"}";
+        mockMvc.perform(put("/agendamento-de-coleta/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(requestBody)
+                .with(httpBasic("username", "password")))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
+    public void testDeleteAgendamentoDeColeta() throws Exception {
+        mockMvc.perform(delete("/agendamento-de-coleta/100")
+                .with(httpBasic("username", "password")))
+                .andExpect(status().isNoContent());
+    }
+}

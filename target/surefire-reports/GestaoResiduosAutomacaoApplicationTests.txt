@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: GestaoResiduosAutomacaoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 4.027 s <<< FAILURE! - in GestaoResiduosAutomacaoApplicationTests
+testDeleteAgendamentoDeColeta  Time elapsed: 0.072 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<204> but was:<403>
+	at GestaoResiduosAutomacaoApplicationTests.testDeleteAgendamentoDeColeta(GestaoResiduosAutomacaoApplicationTests.java:64)
+
+testPostAgendamentoDeColeta  Time elapsed: 0.016 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<403>
+	at GestaoResiduosAutomacaoApplicationTests.testPostAgendamentoDeColeta(GestaoResiduosAutomacaoApplicationTests.java:47)
+
+testPutAgendamentoDeColeta  Time elapsed: 0.015 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<204> but was:<403>
+	at GestaoResiduosAutomacaoApplicationTests.testPutAgendamentoDeColeta(GestaoResiduosAutomacaoApplicationTests.java:57)
+

@@ -1,0 +1,15 @@
+br\com\gestao_residuos_automacao\service\RotaService.class
+br\com\gestao_residuos_automacao\repository\CaminhaoColetaRepository.class
+br\com\gestao_residuos_automacao\model\AgendamentoColeta.class
+br\com\gestao_residuos_automacao\GestaoResiduosAutomacaoApplication.class
+br\com\gestao_residuos_automacao\model\Rota.class
+br\com\gestao_residuos_automacao\model\CaminhaoColeta.class
+br\com\gestao_residuos_automacao\exception\AgendamentoExistenteException.class
+br\com\gestao_residuos_automacao\config\WebConfig.class
+br\com\gestao_residuos_automacao\controller\AgendamentoColetaController.class
+br\com\gestao_residuos_automacao\service\AgendamentoColetaService.class
+br\com\gestao_residuos_automacao\repository\RotaRepository.class
+br\com\gestao_residuos_automacao\security\SecurityConfig.class
+br\com\gestao_residuos_automacao\exception\RotaNotFoundException.class
+br\com\gestao_residuos_automacao\repository\AgendamentoColetaRepository.class
+br\com\gestao_residuos_automacao\service\CaminhaoColetaService.class

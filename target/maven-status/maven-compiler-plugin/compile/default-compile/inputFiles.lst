@@ -1,0 +1,13 @@
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\controller\AgendamentoDeColetaController.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\service\AgendamentoColetaService.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\config\WebConfig.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\entity\CaminhaoColeta.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\service\RotaService.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\config\SecurityConfig.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\entity\Rota.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\repository\RotaRepository.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\entity\AgendamentoColeta.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\repository\AgendamentoColetaRepository.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\repository\CaminhaoColetaRepository.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\service\CaminhaoColetaService.java
+C:\Users\gabri\Documents\aplicativos\gestao-residuos-automacao\src\main\java\br\com\gestao_residuos_automacao\GestaoResiduosAutomacaoApplication.java

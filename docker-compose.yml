@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: coleta_seletiva
+      MYSQL_ROOT_PASSWORD: yourpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - coleta-network
+
+  coleta-seletiva:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/coleta_seletiva
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: yourpassword
+    depends_on:
+      - mysql
+    networks:
+      - coleta-network
+
+networks:
+  coleta-network:
+    driver: bridge
